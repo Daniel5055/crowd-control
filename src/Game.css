@@ -1,0 +1,17 @@
+#grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    width: min-content;
+}
+
+#box {
+    margin: auto;
+    width: 100px;
+    background-color: grey;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
