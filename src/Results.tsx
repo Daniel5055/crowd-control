@@ -5,6 +5,7 @@ type Users = {
     [user: string]: {
         score: number
         name: string
+        alive: boolean
     }
 }
 
@@ -18,18 +19,20 @@ export default function Results() {
         return <h2>Loading Scores</h2>
     }
 
-    const sorted = Object.values(users).sort((a, b) => a.score - b.score).slice(0, 10);
+    const sorted = Object.values(users).sort((a, b) => b.score - a.score).slice(0, 10);
 
     return (
         <table>
             <tr>
                 <th>Player</th>
                 <th>Score</th>
+                <th>Alive</th>
             </tr>
             {sorted.map((u, i) => (
                 <tr key={i}>
                     <td>{u.name}:</td>
                     <td>{u.score}</td>
+                    <td>{!u.alive ? "💀" : "😊"}</td>
                 </tr>
             ))}
         </table>

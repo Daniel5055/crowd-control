@@ -1,10 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import { QRCodeCanvas } from 'qrcode.react'
 import Start from './Start'
 import Game from './Game'
 
-export const serverPath = 'http://localhost:3030'
+export const serverPath = 'https://db255.teaching.cs.st-andrews.ac.uk/node'
 
 export interface Board {
   score: number
@@ -24,7 +23,7 @@ function App() {
   // Get qr code
   return (
     <>
-      <h1>Crowd Control</h1>
+      <h1>Trick and Treat</h1>
       {
         board === null ? (
           <Start start={start}/>
